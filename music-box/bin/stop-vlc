@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# Stop/clean-up VLC
+logger "stop-vlc script running as $USER$"
+pkill -9 vlc
+pkill -9 vlc

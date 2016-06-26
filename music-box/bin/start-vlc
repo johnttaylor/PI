@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Be verbose (helps with debugging)
+echo   "Attempting to start the VLC HTTP interface. PID=$$"
+logger "Attempting to start the VLC HTTP interface. PID=$$"
+
+# generate a random number to delay so my test will work
+mydelay=`echo "$[((($RANDOM % 10)+1)*100)] / 1000" | bc -l`
+echo   "Delaying for $mydelay seconds (PID=$$)..."
+logger "Delaying for $mydelay seconds (PID=$$)..."
+sleep $mydelay
+
+# only start one instance
+vlcpids=`ps -A | grep vlc | wc -l`
+if [ $vlcpids -gt 2 ]; then
+    echo   "VLC HTTP interface is already running  (PID=$$)."
+    logger "VLC HTTP interface is already running  (PID=$$))."
+else
+    # start VLC with web interface
+    echo   "Starting VLC HTTP interface  (PID=$$, user=$USER)..."
+    logger "Starting VLC HTTP interface  (PID=$$, user=$USER)..."
+    myfiles=`find /home/pi/Music -name '*.mp3' | sed -e 's/^/file:\/\//' | sed -e 's/ /%20/g' | tr '\n' ' '`
+    vlc -I http --aout=pulse --one-instance --playlist-enqueue --playlist-autostart --http-port=8888 -L -Z $myfiles
+fi

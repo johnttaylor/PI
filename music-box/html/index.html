@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Kahlo's Music Box</h1>
+
+<div id="startplayer">
+<h2>
+<button type="button" onclick="executeScript('start-music-player.cgi', 2000 )">Start Music Player</button>
+</h2>
+</div>
+
+<div id="stopplayer">
+<h2>
+<button type="button" onclick="executeScript('stop-vlc.cgi', 500 )">Stop  Music Player</button>
+</h2>
+</div>
+
+<!--
+<div id="debug"><h2>debug string</h2></div>
+-->
+
+<div id="player" align="left" style="display:none">	
+<iframe id='iframe1' src="http://192.168.10.41:8888/" width="850" height="550" align="left"></iframe>
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function(event ){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+            if ( xhttp.responseText.includes("true") == true ) {
+                //document.getElementById('debug').innerHTML = 'true';
+                document.getElementById('player').style.display = 'block';
+            }
+            else {
+                //document.getElementById('debug').innerHTML = 'false';
+                document.getElementById('player').style.display = 'none';
+            }
+        }
+    };
+
+    xhttp.open("GET", "cgi-bin/query-vlc.cgi", true);
+    xhttp.send();
+});
+
+function executeScript(scriptName, reloadDelay ) {
+    if ( !reloadDelay ) {
+        var reloadDelay = 0;
+    }
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "cgi-bin/"+scriptName, true);
+    xhttp.send();
+
+    if ( reloadDelay > 0 ) {
+        //setTimeout( function() {document.getElementById('iframe1').src += '';}, reloadDelay );
+        setTimeout( function() {location.reload();}, reloadDelay );
+    }
+}
+</script>
+
+</body>
+</html>
