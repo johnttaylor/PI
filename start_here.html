@@ -233,6 +233,10 @@ Error message and password prompt
 
 <li>$:/state/toc/Contents-Intro--966365951</li>
 
+<li>$:/state/toc/Contents-Kahlo's Music Box--242358753</li>
+
+<li>$:/state/toc/Contents-Virgin Pi--242358753</li>
+
 <li>$:/StoryList</li>
 
 <li>$:/temp/advancedsearch</li>
@@ -263,6 +267,12 @@ Error message and password prompt
 
 <li>Acknowledgements</li>
 
+<li>Apache Web Server</li>
+
+<li>Bluetooth</li>
+
+<li>Kahlo's Music Box</li>
+
 <li>LeftMenu</li>
 
 <li>LeftTitle</li>
@@ -271,9 +281,17 @@ Error message and password prompt
 
 <li>Overview</li>
 
+<li>Samba Server</li>
+
 <li>TopButtons</li>
 
+<li>VIM Editor</li>
+
 <li>Virgin Pi</li>
+
+<li>VLC</li>
+
+<li>VNC</li>
 
 </ul>
 </p>
@@ -5324,7 +5342,13 @@ html .solidborders td {  border: 1px solid black; }</pre>
 <div modified="20141011172627069" title="$:/state/toc/Contents-Intro--966365951">
 <pre>open</pre>
 </div>
-<div list="[[Virgin Pi]] Overview" title="$:/StoryList">
+<div modified="20160626024459294" title="$:/state/toc/Contents-Kahlo's Music Box--242358753">
+<pre>close</pre>
+</div>
+<div modified="20160626024923248" title="$:/state/toc/Contents-Virgin Pi--242358753">
+<pre>close</pre>
+</div>
+<div list="Overview" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20141011164829984" modified="20150420035007892" title="$:/temp/advancedsearch">
@@ -5344,7 +5368,7 @@ html .solidborders td {  border: 1px solid black; }</pre>
     }
 }</pre>
 </div>
-<div created="20141011164514051" modified="20141024035354398" title="$:/temp/NewTagName">
+<div created="20141011164514051" modified="20160626023247716" title="$:/temp/NewTagName">
 <pre></pre>
 </div>
 <div created="20141011171545808" modified="20141011171550853" title="$:/temp/search">
@@ -5447,6 +5471,45 @@ html .solidborders td {  border: 1px solid black; }</pre>
 |John Taylor |john.t.taylor@gmail.com|principal author |
 </pre>
 </div>
+<div created="20160626023239207" modified="20160626023351678" tags="[[Virgin Pi]] [[Kahlo's Music Box]]" title="Apache Web Server">
+<pre>Use the following to install the Apache web server
+
+&lt;&lt;&lt;
+```
+sudo apt-get install apache2 -y
+&lt;&lt;&lt;</pre>
+</div>
+<div created="20160626021937781" modified="20160626022412104" tags="[[Kahlo's Music Box]] [[Virgin Pi]]" title="Bluetooth">
+<pre>!!For bluetooth support
+The following command installs the neccesary drives, packages, etc. to get Bluetooth working on a Raspberry PI 3.
+
+&lt;&lt;&lt;
+```
+sudo apt-get install pulseaudio pavucontrol pulseaudio-module-bluetooth
+sudo apt-get install bluez bluez-firmware
+sudo apt-get install blueman
+```</pre>
+</div>
+<div created="20160626015831752" modified="20160626022942813" tags="Contents" title="Kahlo's Music Box">
+<pre>The goal of this project was simple:  Play music via a Bluetooth speaker and provide a basic web interface for controlling the music/playlist.  
+
+''Results'':  I end up using [[VLC|http://www.videolan.org/vlc/index.html]] to manage the music and playlist(s) and a simple webpage (using [[Apache|http://www.apache.org/]]) as a wrapper VLC's web interface that provides additional buttons to start/stop VLC.  VLC was not my first choice for the music player - but it was the only player I could get to work reliably with Bluetooth speaker. //Note&quot;// The VLC web interfaces requires an internet connection to work properly.
+
+Use the following pages to install the require packages, scripts, web pages, etc. for Kahol's Music box.  Note: This list is in alphabetical order.
+
+&lt;h3&gt;
+&lt;ul&gt;
+&lt;$list filter=&quot;[tag[Kahlo's Music Box]sort[title]]&quot;&gt;&lt;li&gt;&lt;$link&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;/li&gt;
+&lt;/$list&gt;
+&lt;/ul&gt;
+&lt;/h3&gt;
+
+''FYI'': In case you are wondering, [[Kahlo|https://en.wikipedia.org/wiki/Frida_Kahlo]] is the host name of my Raspberry PI
+
+[img[music-box-main-page.png]]
+
+</pre>
+</div>
 <div created="20141012031702770" modified="20141019031650552" title="LeftMenu">
 <pre>---
 __''//Table-of-Contents//''__
@@ -5461,15 +5524,53 @@ __''//Table-of-Contents//''__
 |&lt;p style=&quot;margin-bottom:0px; margin-top:0px;&quot;&gt;[img[logo.gif]] &lt;/p&gt;|
 |&lt;p style=&quot;margin-bottom:0px; margin-top:0px; font-size:1.3em&quot;&gt;//{{$:/SiteSubtitle}}// &lt;/p&gt; |</pre>
 </div>
-<div created="20140726150234197" creator="JohnTaylor" modified="20150420035040275" modifier="JohnTaylor" tags="Contents" title="Licensing">
-<pre>The license [[file|http://integerfox.com/colony.freertos/license.txt]] can be found in the &lt;code&gt;top/&lt;/code&gt; directory of the package.
+<div created="20140726150234197" creator="JohnTaylor" modified="20160626024857979" modifier="JohnTaylor" tags="Contents" title="Licensing">
+<pre>All of ''my'' original content is freely available for any use.   
 
-&lt;div align=&quot;center&quot;&gt;&lt;iframe src=&quot;./license.txt&quot; frameborder=&quot;0&quot; width=&quot;100%&quot; height=&quot;800&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;</pre>
+!!!// ''Note:'' All packages, software entities, etc. not authored by __me__ are subject to their own licensing agreements.//</pre>
 </div>
-<div created="20141016035733241" modified="20160615050451138" title="Overview">
+<div created="20141016035733241" modified="20160626015814480" title="Overview">
 <pre>This is my engineering notebook for working with the Raspberry PI.  I have started my PI journey with [[PI 3 Model B|https://www.raspberrypi.org/products/raspberry-pi-3-model-b/]] and a [[Super Kit V2.0|https://www.sunfounder.com/starterkit/rpi/super-kit-v2-0.html]] from [[Sunfounder|https://www.sunfounder.com/]]
 
-''Let the adventure begin....''</pre>
+''Let the adventure begin....''
+
+... also supporting files can be found at my github [[pi|https://github.com/johnttaylor/PI]] project.</pre>
+</div>
+<div created="20160626022041135" modified="20160626023638115" tags="[[Virgin Pi]]" title="Samba Server">
+<pre>This will set up the RPi as a [[Samba server||http://raspberrywebserver.com/serveradmin/share-your-raspberry-pis-files-and-folders-across-a-network.html]], i.e. you can mount the RPi's shared directory as a network drive on your desktop PC.
+
+&lt;&lt;&lt;
+```
+sudo apt-get intall samba samba-common-bin
+```
+Edit the Samba configuration. Change the following entries in the `/etc/samba/smb.conf` file:
+
+```
+workgroup = your_workgroup_name
+wins support = yes
+
+```
+Add the following entries to the `smb.conf` file:
+
+```
+[pihome]
+   comment= Pi Home
+   path=/home/pi
+   browseable=Yes
+   writeable=Yes
+   only guest=no
+   create mask=0777
+   directory mask=0777
+   public=no
+```
+
+Set the Samba password and then restart the Samba server
+
+```
+smbpasswd -a pi
+sudo /etc/init.d/samba restart
+```
+&lt;&lt;&lt;</pre>
 </div>
 <div created="20141012034532185" modified="20141019032946319" tags="$:/tags/TopLeftBar" title="TopButtons">
 <pre>&lt;div class=&quot;tc-page-controls tc-toolbar&quot;&gt;
@@ -5485,7 +5586,17 @@ __''//Table-of-Contents//''__
 {{$:/core/ui/Buttons/close-all}}
 &lt;div&gt;</pre>
 </div>
-<div created="20160615033724699" modified="20160622013104144" tags="Contents" title="Virgin Pi">
+<div created="20160626023352880" modified="20160626023452936" tags="[[Virgin Pi]]" title="VIM Editor">
+<pre>The basic OS image for the Raspberry comes with VI.  Use the following command to install the VIM Editor.
+
+&lt;&lt;&lt;
+```
+sudo apt-get install vim -y
+```
+&lt;&lt;&lt;
+</pre>
+</div>
+<div created="20160615033724699" modified="20160626023819693" tags="Contents" title="Virgin Pi">
 <pre>This is my collection of steps and links to get a new RPi (Raspberry Pi) up and running as headless single board computer.
 
 //''Note:'' The [[Raspberry PI Foundation's|https://www.raspberrypi.org]] website is very helpful, i.e. 
@@ -5546,10 +5657,35 @@ sudo rpi-update
 &lt;&lt;&lt;
 
 !! Additional Software Packages
-The following packages is the baseline for headless RPis (and yes I own more than on RPi).
+The following packages are my baseline for headless RPis (and yes I own more than on RPi).
 
-* For VNC  Server.  Follow the steps in this [[link|https://www.raspberrypi.org/documentation/remote-access/vnc/README.md]] to install and configure the VNC Server to be auto started on boot-up.  
-** To get copy/paste on from the Client's host to the VNC window, do the following:
+&lt;h3&gt;
+&lt;ul&gt;
+&lt;$list filter=&quot;[tag[Virgin Pi]sort[title]]&quot;&gt;&lt;li&gt;&lt;$link&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;/li&gt;
+&lt;/$list&gt;
+&lt;/ul&gt;
+&lt;/h3&gt;
+
+
+
+
+</pre>
+</div>
+<div created="20160626024258593" modified="20160626024437826" tags="[[Kahlo's Music Box]]" title="VLC">
+<pre>Use the following command to install [[VLC|http://www.videolan.org/vlc/]] on your RPi.
+
+&lt;&lt;&lt;
+```
+&gt; sudo apt-get install vlc
+```
+&lt;&lt;&lt;</pre>
+</div>
+<div created="20160626023034994" modified="20160626023150824" tags="[[Virgin Pi]]" title="VNC">
+<pre>!! VNC  Server.  
+
+Follow the steps in this [[link|https://www.raspberrypi.org/documentation/remote-access/vnc/README.md]] to install and configure the VNC Server to be auto started on boot-up.  
+
+To get copy/paste on from the Client's host to the VNC window, do the following:
 
 &lt;&lt;&lt;
 ```
@@ -5568,59 +5704,6 @@ and add the like this:
  startxfce4 &amp;
 ```
 restart vncserver
-&lt;&lt;&lt;
-* For bluetooth support
-&lt;&lt;&lt;
-```
-sudo apt-get install pulseaudio pavucontrol pulseaudio-module-bluetooth
-sudo apt-get install bluez bluez-firmware
-sudo apt-get install blueman
-```
-&lt;&lt;&lt;
-* For Apache web server
-&lt;&lt;&lt;
-```
-sudo apt-get install apache2 -y
-```
-&lt;&lt;&lt;
-* VIM Editor (VI is part of the OS Image - not VIM)
-&lt;&lt;&lt;
-```
-sudo apt-get install vim -y
-```
-&lt;&lt;&lt;
-* [[Samba File Share|http://raspberrywebserver.com/serveradmin/share-your-raspberry-pis-files-and-folders-across-a-network.html]]. This will set up the RPi as a Samba server, i.e. you can mount the RPi's shared directory as a network drive on your desktop PC.
-&lt;&lt;&lt;
-```
-sudo apt-get intall samba samba-common-bin
-```
-Edit the Samba configuration. Change the following entries in the `/etc/samba/smb.conf` file:
-
-```
-workgroup = your_workgroup_name
-wins support = yes
-
-```
-Add the following entries to the `smb.conf` file:
-
-```
-[pihome]
-   comment= Pi Home
-   path=/home/pi
-   browseable=Yes
-   writeable=Yes
-   only guest=no
-   create mask=0777
-   directory mask=0777
-   public=no
-```
-
-Set the Samba password and then restart the Samba server
-
-```
-smbpasswd -a pi
-sudo /etc/init.d/samba restart
-```
 &lt;&lt;&lt;</pre>
 </div>
 
