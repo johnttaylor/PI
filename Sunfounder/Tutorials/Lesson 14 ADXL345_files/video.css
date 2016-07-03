@@ -1,0 +1,91 @@
+.gallery li{float:left; width:25%; box-sizing:border-box; -o-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; -webkit-box-sizing:border-box; padding:10px}
+.videobox{position:relative}
+.gallery li h2{background:#000; color:#fff; font-size:14px; line-height:30px; margin-top:2px;}
+.gallery li a{color:#fff; text-decoration:none; display:block}
+.gallery li img{width:100%; height:auto}
+.gallery li iframe{position:absolute; width:100%; height:100%;}
+.gallery li .video-placeholder{width:100%; height:auto}
+.framevideo{margin-left: auto; margin-right: auto; width: 50%;}
+
+.leftgallery li a{color:#000; text-decoration:none; display:block}
+.leftgallery li{border-bottom:1px solid; box-sizing:border-box; -o-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; -webkit-box-sizing:border-box; padding:10px}
+.left{background-color: #f2f1f0;}
+.left p{border-bottom: 1px solid; margin-top: 5px; padding: 10px; text-align: center;}
+.std .fleft ul li{margin-left:0px}
+.std .fleft {margin-top:0px}
+.std .fleft ul{list-style: outside none none;}
+.widget{width: 560px;height: 315px;margin: 0 auto 20px;}
+.photo_content{
+    width: 900px;
+    margin: 20px auto;
+    position: relative;    
+
+}
+.reader-images{margin-bottom: 20px;}
+.scrollable-panel div.scon {
+    position: absolute;
+    width: 2010em;
+}
+.scrollable-panel div.scon .con {
+  width: 150px;
+  float: left;
+  margin: 0 10px;
+}
+.category_video a{cursor: pointer;float: left;width: 120px;color: #000;font-size: 12px;margin: 0 10px;}
+.category_video a:hover{color: #000;}
+.scrollable-panel {
+    height: 135px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width:675px;
+}
+.sprev {
+    background-image: url("../images/sprev.png");
+    display: block;
+    float: left;
+    height: 56px;
+    left: 50px;
+    outline: medium none;
+    position: absolute;
+    top: 200px;
+    width: 12px;
+    z-index: 99;
+}
+.scrollable-trigger{display: none;}
+.snext {
+    background-image: url("../images/snext.png");
+    display: block;
+    float: right;
+    height: 57px;
+    outline: medium none;
+    position: absolute;
+    right: 50px;
+   top: 200px;
+    width: 12px;
+    z-index: 99;
+}
+.trigger-bar .prev {
+    background-image: url("../images/sprev.png");
+    display: block;
+    float: left;
+    height: 56px;
+    left: 100px;
+    bottom: 38px;
+    outline: medium none;
+    position: absolute;
+    width: 12px;
+    z-index: 99;
+}
+.trigger-bar .next {
+    background-image: url("../images/snext.png");
+    bottom: 39px;
+    display: block;
+    float: right;
+    height: 57px;
+    outline: medium none;
+    position: absolute;
+    right: 98px;
+    width: 12px;
+    z-index: 99;
+}

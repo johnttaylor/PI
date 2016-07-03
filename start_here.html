@@ -271,6 +271,8 @@ Error message and password prompt
 
 <li>Bluetooth</li>
 
+<li>Instructions, Notes, etc.</li>
+
 <li>Kahlo's Music Box</li>
 
 <li>LeftMenu</li>
@@ -282,6 +284,8 @@ Error message and password prompt
 <li>Overview</li>
 
 <li>Samba Server</li>
+
+<li>Sunfounder</li>
 
 <li>TopButtons</li>
 
@@ -5342,13 +5346,13 @@ html .solidborders td {  border: 1px solid black; }</pre>
 <div modified="20141011172627069" title="$:/state/toc/Contents-Intro--966365951">
 <pre>open</pre>
 </div>
-<div modified="20160626024459294" title="$:/state/toc/Contents-Kahlo's Music Box--242358753">
-<pre>close</pre>
+<div modified="20160626025637528" title="$:/state/toc/Contents-Kahlo's Music Box--242358753">
+<pre>open</pre>
 </div>
-<div modified="20160626024923248" title="$:/state/toc/Contents-Virgin Pi--242358753">
-<pre>close</pre>
+<div modified="20160626025609821" title="$:/state/toc/Contents-Virgin Pi--242358753">
+<pre>open</pre>
 </div>
-<div list="Overview" title="$:/StoryList">
+<div list="Sunfounder Overview" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20141011164829984" modified="20150420035007892" title="$:/temp/advancedsearch">
@@ -5471,13 +5475,50 @@ html .solidborders td {  border: 1px solid black; }</pre>
 |John Taylor |john.t.taylor@gmail.com|principal author |
 </pre>
 </div>
-<div created="20160626023239207" modified="20160626023351678" tags="[[Virgin Pi]] [[Kahlo's Music Box]]" title="Apache Web Server">
+<div created="20160626023239207" modified="20160703034837587" tags="[[Virgin Pi]] [[Kahlo's Music Box]]" title="Apache Web Server">
 <pre>Use the following to install the Apache web server
 
 &lt;&lt;&lt;
 ```
 sudo apt-get install apache2 -y
-&lt;&lt;&lt;</pre>
+```
+&lt;&lt;&lt;
+
+''Note:'' Jessie, aka Debian, manages the configuration of Apache ''differently'' that other distributions.  So when googling how to configuration Apache - you probably won't find the correct answer with respect Jessie/Debian.  This [[link|http://www.control-escape.com/web/configuring-apache2-debian.html]] details the differences.
+
+!! Locations
+
+&gt;Root for the HTML pages:
+
+&gt;&gt;`/var/www/html`
+
+&gt;Location of cgi scripts:
+
+&gt;&gt;`/usr/lib/cgi-bin`
+
+
+!! Resolution for 
+&gt;AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+
+&lt;&lt;&lt;
+Add the line `ServerName localhost` to the `apache2.confg` file
+
+```
+cd /etc/apache2
+sudo vim apache2.conf
+```
+&lt;&lt;&lt;
+
+!!To enable cgi support, do the follwoing:
+&lt;&lt;&lt;
+```
+cd /etc/apache2
+sudo a2enmod cgid 
+sudo a2enmod info
+service apache2 restart
+```
+&lt;&lt;&lt;
+</pre>
 </div>
 <div created="20160626021937781" modified="20160626022412104" tags="[[Kahlo's Music Box]] [[Virgin Pi]]" title="Bluetooth">
 <pre>!!For bluetooth support
@@ -5490,12 +5531,73 @@ sudo apt-get install bluez bluez-firmware
 sudo apt-get install blueman
 ```</pre>
 </div>
-<div created="20160626015831752" modified="20160626022942813" tags="Contents" title="Kahlo's Music Box">
+<div created="20160703031849499" modified="20160703050020199" tags="[[Kahlo's Music Box]]" title="Instructions, Notes, etc.">
+<pre>* The `start-vlc` script searches the /home/pi/Music directory for its playlists and/or music tracks, i.e. put your music here.
+* Install Apache, Bluetooth, and VLC
+* Enable CGI script support in Apache
+* Run `raspi-config` to auto boot/auto login into the desktop.  This is the only way I could make ~PulseAudio/Bluetooth/VLC work.
+* Using VNC to connect to your PI's desktop, run the `Bluetooth Manager` and pair with your  Bluetooth speaker.  The `Bluetooth Manager` should be under the //Preferences// menu.
+* Mod Apache to run the web pages as the `pi` user (not a great solution - but expedient)
+&lt;&lt;&lt;
+```
+sudo vim /etc/apache2/envvars
+
+#export APACHE_RUN_USER=www-data
+#export APACHE_RUN_GROUP=www-data
+export APACHE_RUN_USER=pi
+export APACHE_RUN_GROUP=pi
+```
+&lt;&lt;&lt;
+
+* Add the following to the vlc config file (`/home/pi/.config/vlc/vlcrc`)
+
+&lt;&lt;&lt;
+```
+[alsa] # ALSA audio output
+# Audio output device (string)
+alsa-audio-device=pulse
+```
+&lt;&lt;&lt;
+* Edit `index.html` to use your PI's IP address.  The music box requires a static IP address for the PI, or DNS server to properly resolve the PI's host name.
+&lt;&lt;&lt;
+```
+&lt;div id=&quot;player&quot; align=&quot;left&quot; style=&quot;display:none&quot;&gt;
+&lt;iframe id='iframe1' src=&quot;http://192.168.10.73:8888/&quot; width=&quot;850&quot; height=&quot;550&quot; align=&quot;left&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+```
+&lt;&lt;&lt;
+* Set Password for VLC.  Then use the web page to start VLC and enter the password - ''note:'' leave `username` blank.
+&gt; `Tools &gt; Preferences &gt; All &gt; Main interfaces &gt; Lua &gt; Lua HTTP &gt; Password.`
+* To get pulseaudio to autostart, I reinstalled `lightdm`
+&lt;&lt;&lt;
+```
+sudo apt-get remove lightdm
+sudo apt-get install lightdm
+sudo reboot
+```
+&lt;&lt;&lt;
+* Launch `Pulse Audio Volume Control` Application.
+&gt;* Select `Configuration` tab
+&gt;*Turn off `bcm1835 ALSA`
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+</div>
+<div created="20160626015831752" modified="20160703050036208" tags="Contents" title="Kahlo's Music Box">
 <pre>The goal of this project was simple:  Play music via a Bluetooth speaker and provide a basic web interface for controlling the music/playlist.  
 
 ''Results'':  I end up using [[VLC|http://www.videolan.org/vlc/index.html]] to manage the music and playlist(s) and a simple webpage (using [[Apache|http://www.apache.org/]]) as a wrapper VLC's web interface that provides additional buttons to start/stop VLC.  VLC was not my first choice for the music player - but it was the only player I could get to work reliably with Bluetooth speaker. //Note&quot;// The VLC web interfaces requires an internet connection to work properly.
 
-Use the following pages to install the require packages, scripts, web pages, etc. for Kahol's Music box.  Note: This list is in alphabetical order.
+Use the following pages to install the require packages, scripts, web pages, etc. for Kahol's Music box.  Note: This list is in alphabetical order. Use the [[Instructions...|Instructions, Notes, etc.]] link for details instructions.
 
 &lt;h3&gt;
 &lt;ul&gt;
@@ -5572,6 +5674,11 @@ sudo /etc/init.d/samba restart
 ```
 &lt;&lt;&lt;</pre>
 </div>
+<div created="20160703205132713" modified="20160703210058018" tags="Contents" title="Sunfounder">
+<pre>!!My notes on Sunfounder and the ~SuperKit
+* The manual that came with the ~SuperKit is/was in Germany!  I have downloaded the tutorials - in English - and have added them to my git PI project.  The tutorials can be found in the `./Sunfounder/Tutorials` directory
+</pre>
+</div>
 <div created="20141012034532185" modified="20141019032946319" tags="$:/tags/TopLeftBar" title="TopButtons">
 <pre>&lt;div class=&quot;tc-page-controls tc-toolbar&quot;&gt;
 &lt;span style=&quot;font-family:'Lucida Console', monospace; font-size: 2em; margin:0 padding:0;&quot;&gt;[[int fox();|http://integerfox.com]] &lt;/span&gt;
@@ -5596,7 +5703,7 @@ sudo apt-get install vim -y
 &lt;&lt;&lt;
 </pre>
 </div>
-<div created="20160615033724699" modified="20160626023819693" tags="Contents" title="Virgin Pi">
+<div created="20160615033724699" modified="20160626025502539" tags="Contents" title="Virgin Pi">
 <pre>This is my collection of steps and links to get a new RPi (Raspberry Pi) up and running as headless single board computer.
 
 //''Note:'' The [[Raspberry PI Foundation's|https://www.raspberrypi.org]] website is very helpful, i.e. 
@@ -5619,7 +5726,7 @@ My main/desktop PC is Windows 10 laptop.  However, any needed PC based software 
 
 * SD Card imaging software.  See this [[link|https://www.raspberrypi.org/documentation/installation/installing-images/README.md]] for software that burns OS image file on to your SD card.
 * Nmap scanner.  You will need a Network Scanner to find the IP address of your RPi when it first powered up.  I used [[Zenmap|https://nmap.org/zenmap/]]
-* VNC Client.  The VNC Client allows to remotely bring up the RPi's graphically interface on your desktop PC.  I used [[TIghVNC|http://www.tightvnc.com/]].  You will only need to install the VNC Client application on your desktop PC.
+* VNC Client.  The VNC Client allows to remotely bring up the RPi's graphically interface on your desktop PC.  I used [[TightVNC|http://www.tightvnc.com/]].  You will only need to install the VNC Client application on your desktop PC.
 * SSH Client for command line access to your RPi.  I use [[Putty|http://www.putty.org/]]
 
 !! Boot-up
@@ -5671,12 +5778,12 @@ The following packages are my baseline for headless RPis (and yes I own more tha
 
 </pre>
 </div>
-<div created="20160626024258593" modified="20160626024437826" tags="[[Kahlo's Music Box]]" title="VLC">
+<div created="20160626024258593" modified="20160626025648467" tags="[[Kahlo's Music Box]]" title="VLC">
 <pre>Use the following command to install [[VLC|http://www.videolan.org/vlc/]] on your RPi.
 
 &lt;&lt;&lt;
 ```
-&gt; sudo apt-get install vlc
+sudo apt-get install vlc
 ```
 &lt;&lt;&lt;</pre>
 </div>

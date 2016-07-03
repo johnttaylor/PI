@@ -1,0 +1,100 @@
+@media (min-width: 990px) and (max-width: 3000px) { 
+
+}
+
+@media (min-width: 320px) and (max-width: 640px) { 
+
+header#header .inner { width:92%; margin:0 auto; }
+
+header#header .inner h4 { font-size:30px; } 
+
+header#header .inner h4 span { font-size:30px; }  
+
+/*Body*/
+
+section#body { width:92%; }
+
+section#body .left_side { width:100%; float:none; }
+
+section#body .left_side .content .latest_questions ul li .views { width:100%; float:none; }
+
+section#body .left_side .content .latest_questions ul li .detail { width:100%; float:none; padding-top:6px; }
+
+section#body .left_side .content .categories .cat { float:left; width:250px; margin-right:17px; }
+
+/*Right Sidebar*/
+
+section#body .right_sidebar { width:100%; float:none; padding-top:20px; }
+
+section#body .right_sidebar .support_center_login { width:93%; }
+
+/*Latest Questions*/
+
+section#body .right_sidebar .latest_questions { width:93%; }
+
+
+}
+
+@media (min-width: 320px) and (max-width: 469px) { 
+
+
+}
+
+@media (min-width: 470px) and (max-width: 520px) { 
+
+section#body .left_side .content .categories .cat { float:left; width:200px; margin-right:16px; }
+
+section#body .right_sidebar .support_center_login { width:95%; }
+
+/*Latest Questions*/
+
+section#body .right_sidebar .latest_questions { width:95%; }
+
+}
+
+@media (min-width: 480px) and (max-width: 600px) { 
+
+
+}
+
+@media (min-width: 490px) and (max-width: 979px) {
+	
+	header#header .inner { width:95%; margin:0 auto; }
+
+header#header .inner h4 { font-size:30px; } 
+
+header#header .inner h4 span { font-size:30px; }  
+
+/*Body*/
+
+section#body { width:94%; }
+
+section#body .left_side { width:72%; float:left; }
+
+section#body .left_side .content .latest_questions ul li .views { width:100%; float:none; }
+
+section#body .left_side .content .latest_questions ul li .detail { width:100%; float:none; padding-top:6px; }
+
+section#body .left_side .content .categories .cat { float:left; width:220px; margin-right:14px; }
+
+/*Right Sidebar*/
+
+section#body .right_sidebar { width:25%; float:right; padding-top:0px; }
+
+section#body .right_sidebar .support_center_login { width:93%; }
+
+/*Latest Questions*/
+
+section#body .right_sidebar .latest_questions { width:93%; }
+	
+}
+
+@media (min-width: 990px) and (max-width: 1024px) {
+
+
+}
+
+@media (min-width: 990px) and (max-width: 5000px) {
+
+
+}

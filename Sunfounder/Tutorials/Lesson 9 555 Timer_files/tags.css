@@ -1,0 +1,8 @@
+.i-tags-list li {
+	float:left;
+	width: 25%;
+	
+}
+.clear {
+	clear: both;
+}

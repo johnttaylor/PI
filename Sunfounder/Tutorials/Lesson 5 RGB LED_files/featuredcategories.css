@@ -1,0 +1,171 @@
+/**
+ * SFC - Featured Catagories Extension
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to support@storefrontconsulting.com so we can send you a copy immediately.
+ *
+ *
+ * @package    SFC_FeaturedCategories
+ * @copyright  (C)Copyright 2010 StoreFront Consulting, Inc (http://www.StoreFrontConsulting.com/)
+ * @author     Adam Lundrigan
+ */
+ .featured-cat-block .featured-cat-content {
+	 overflow:auto;
+	 zoom:1;
+     width:100%
+}
+.featured-cat-block .featured-cat-content .featured-cat  {
+	border:none;
+	width:21%;
+	display:inline;
+	float:left;
+	padding:0;
+}
+.cms-index-index .featured-cat-block .featured-cat-content .featured-cat{
+	margin-left:0.32%;
+	margin-right:0.35%;
+	width:15.99%;
+	display:inline;
+	margin-top:10px;
+	float:left;
+}
+.featured-cat-block .featured-cat-content .featured-cat .cat-image img {
+	border:none;
+	width:100%;
+	height:100%;
+    max-height:250px;
+}
+.featured-cat-block .featured-cat-content .featured-cat .cat-title {
+	border-bottom:none;
+	margin:0;
+	text-align:left;
+	padding:0;
+	background:none;
+}
+.featured-cat-block  .featured-cat ul li{
+	background:url("../images/breadcrub.png") no-repeat scroll -258px -748px;
+	height:17px;
+	margin-bottom:6px;
+	margin-top:6px;
+	overflow:hidden;
+	padding-left:20px;
+}
+.featured-cat-block .featured-cat-content .featured-cat .cat-title a {
+	color:#333;
+	font-weight:bold;
+	font-size:12px;
+	margin-left:7px;
+}
+.featured-cat {
+	float: left;
+	margin-right:3.555%;
+}
+
+.featured-cat-right {
+	float: right;
+	margin-right: 0px;
+}
+
+.featured-cat .cat-image {
+	text-align: center;
+	border:1px solid #ddd;
+}
+
+.featured-cat .cat-image img {
+	width: 100%;
+	height: 100%;
+	border: 1px solid #C4C1BC;
+}
+
+.featured-cat .cat-title {
+	text-align: center;
+	border-bottom: 1px solid #C4C1BC;
+	margin-bottom: 8px;
+	padding-bottom: 4px;
+}
+
+.featured-cat .cat-title a,
+.featured-cat .cat-title a:hover
+{
+	text-decoration: none;
+	font-weight: bold;
+	font-size: larger;
+	color: black;
+}
+
+/*.featured-cat ul {
+	list-style-type:square;
+	color:#bfbfbf;
+	list-style-position: inside;
+	padding: 0px 0px 0px 4px;
+	margin: 0px;
+}*/
+.featured-cat ul li {
+/*	background:url(../images/li.png) left center no-repeat;
+	padding-left:6px;
+	margin-left:4px;*/
+} 
+.featured-cat ul li.cali_more { background:none; font-size:11px; padding:0;}
+.featured-cat ul li.cali_more a { color:#a50501;}
+.featured-cat li a, 
+.featured-cat li a:hover
+{
+	padding-left: 4px;
+	color: #1d79c1;
+}
+.featured-cat li a:hover{
+	text-decoration:underline;
+}
+.featured-cat li a, .featured-cat li a{
+	display:inline;
+	text-align:left;
+	color:#666;
+	text-indent:30px;
+}
+.featured-cat-block{
+	clear:both;
+}
+.featured-cat-block div.title2014{
+	margin-top:20px;
+	border-bottom:2px solid #0387da;
+}
+.featured-cat-block div.title2014 h2{
+	background: #0387da;
+	width:14%;
+	border-radius:4px 4px 0 0;
+	color:#fff;
+	display:block;
+	font-weight:bold;
+	height:30px;
+	line-height:30px;
+	font-size:12px;
+	padding-left:10px;
+	padding-right:10px;
+	text-align:center;
+	margin-bottom:0px;
+}
+.featured-cat-block .featured-cat-content{
+	border:1px solid #ddd;
+	max-height:400px;
+	height:400px;
+	padding:10px;
+	overflow:hidden;
+}
+.featured-cat-block .featured-cat-content .featured-cat .category_img{
+	display:block;
+	border:1px solid #ccc;
+	margin-bottom:10px;
+	margin-top:10px;
+	text-align:center;
+}
+.featured-cat-block .category_img img:hover{
+	transform:scale(0.9);
+	transition:all 0.3s ease 0s;
+}
