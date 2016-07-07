@@ -5352,7 +5352,7 @@ html .solidborders td {  border: 1px solid black; }</pre>
 <div modified="20160626025609821" title="$:/state/toc/Contents-Virgin Pi--242358753">
 <pre>open</pre>
 </div>
-<div list="Sunfounder Overview" title="$:/StoryList">
+<div list="[[Instructions, Notes, etc.]] [[Apache Web Server]] Sunfounder [[Virgin Pi]] Overview" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20141011164829984" modified="20150420035007892" title="$:/temp/advancedsearch">
@@ -5531,7 +5531,7 @@ sudo apt-get install bluez bluez-firmware
 sudo apt-get install blueman
 ```</pre>
 </div>
-<div created="20160703031849499" modified="20160703050020199" tags="[[Kahlo's Music Box]]" title="Instructions, Notes, etc.">
+<div created="20160703031849499" modified="20160704025203368" tags="[[Kahlo's Music Box]]" title="Instructions, Notes, etc.">
 <pre>* The `start-vlc` script searches the /home/pi/Music directory for its playlists and/or music tracks, i.e. put your music here.
 * Install Apache, Bluetooth, and VLC
 * Enable CGI script support in Apache
@@ -5558,11 +5558,11 @@ export APACHE_RUN_GROUP=pi
 alsa-audio-device=pulse
 ```
 &lt;&lt;&lt;
-* Edit `index.html` to use your PI's IP address.  The music box requires a static IP address for the PI, or DNS server to properly resolve the PI's host name.
+* Edit `index.html` to use your PI's host name (or static IP)
 &lt;&lt;&lt;
 ```
 &lt;div id=&quot;player&quot; align=&quot;left&quot; style=&quot;display:none&quot;&gt;
-&lt;iframe id='iframe1' src=&quot;http://192.168.10.73:8888/&quot; width=&quot;850&quot; height=&quot;550&quot; align=&quot;left&quot;&gt;&lt;/iframe&gt;
+&lt;iframe id='iframe1' src=&quot;http://kahlo:8888/&quot; width=&quot;850&quot; height=&quot;550&quot; align=&quot;left&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 ```
 &lt;&lt;&lt;
@@ -5674,9 +5674,23 @@ sudo /etc/init.d/samba restart
 ```
 &lt;&lt;&lt;</pre>
 </div>
-<div created="20160703205132713" modified="20160703210058018" tags="Contents" title="Sunfounder">
+<div created="20160703205132713" modified="20160704172019539" tags="Contents" title="Sunfounder">
 <pre>!!My notes on Sunfounder and the ~SuperKit
 * The manual that came with the ~SuperKit is/was in Germany!  I have downloaded the tutorials - in English - and have added them to my git PI project.  The tutorials can be found in the `./Sunfounder/Tutorials` directory
+* Downloaded ~WebIoPi-0.7.1.tar.gz and added it to my Git project (at `./WebIoPi` directory).  The instructions for installing/building ~WebIoPi can be found as [[here|file:./Sunfounder/Tutorials/Advanced%20application%20of%20Raspberry%20Pi%20–%20Controlling%20an%20LED%20Based%20on%20Web.html]] in the Tutorials directory.  
+**~WebIoPI-0.7.1 does [[not work|https://groups.google.com/forum/#!topic/webiopi/RGtrRfFJMKY]] on the PI 3+.  You need the following patch to make it work.
+&lt;&lt;&lt;
+```
+$ cd /home/pi
+$ sudo wget http://sourceforge.net/projects/webiopi/files/WebIOPi-0.7.1.tar.gz
+$ sudo tar xvzf WebIOPi-0.7.1.tar.gz
+$ cd WebIOPi-0.7.1
+$ sudo wget https://raw.githubusercontent.com/doublebind/raspi/master/webiopi-pi2bplus.patch
+$ patch -p1 -i webiopi-pi2bplus.patch
+$ sudo ./setup.sh
+```
+&lt;&lt;&lt;
+* Documentation for the GPIO Python library can be found [[here|https://sourceforge.net/projects/raspberry-gpio-python]] (click on the `wiki` tab).
 </pre>
 </div>
 <div created="20141012034532185" modified="20141019032946319" tags="$:/tags/TopLeftBar" title="TopButtons">
